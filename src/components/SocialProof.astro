@@ -7,9 +7,9 @@ const items = [
 ---
 
 <section class="border-y border-warm-500/30 bg-warm-400">
-  <div
-    class="mx-auto flex max-w-[1400px] flex-wrap items-center justify-center gap-4 px-6 py-10 lg:justify-between lg:px-12"
-  >
+
+  <!-- Desktop: original flex layout -->
+  <div class="mx-auto hidden max-w-[1400px] items-center justify-between gap-4 px-6 py-10 lg:flex lg:px-12">
     {
       items.map((item) => (
         <div class="flex items-center gap-1.5 rounded-full bg-white px-4 py-1.5">
@@ -19,7 +19,6 @@ const items = [
         </div>
       ))
     }
-
     <div class="flex items-center gap-2 rounded-full px-4 py-1.5" style="background-color: #12123A;">
       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 256 256" fill="#FFE836">
         <path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Z"/>
@@ -29,4 +28,50 @@ const items = [
       <span class="text-[14px] font-normal" style="color: #FFE836;">recipes weekly</span>
     </div>
   </div>
+
+  <!-- Mobile layout -->
+  <div class="flex flex-col gap-3 px-6 py-6 lg:hidden">
+
+    <!-- Marquee of first 3 pills -->
+    <div class="-mx-6 overflow-hidden">
+      <div class="social-marquee flex gap-3 px-6">
+        {
+          [...items, ...items].map((item) => (
+            <div class="flex shrink-0 items-center gap-1.5 rounded-full bg-white px-4 py-1.5">
+              <span class="h-[6px] w-[6px] flex-shrink-0 rounded-full bg-[#FF961E]"></span>
+              <span class="text-[14px] font-bold text-text-primary">{item.value}</span>
+              <span class="text-[14px] font-normal text-text-primary">{item.label}</span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- "New recipes weekly" full-width feature bar -->
+    <div class="flex items-stretch gap-4 rounded-xl px-5 py-4" style="background-color: #12123A;">
+      <div class="flex shrink-0 items-center justify-center rounded-lg p-4" style="background-color: #1e1e5a;">
+        <img src="/color_new_recipes_icon.svg" alt="" class="h-7 w-7" aria-hidden="true" />
+      </div>
+      <div class="flex flex-col gap-1">
+        <p class="text-[16px] font-bold text-white">New recipes weekly</p>
+        <p class="text-[14px] font-normal leading-snug text-white/70">A fresh nonna, a fresh dish. Your $55 keeps growing all year long.</p>
+      </div>
+    </div>
+
+  </div>
+
 </section>
+
+<style>
+  @keyframes social-marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .social-marquee {
+    animation: social-marquee 14s linear infinite;
+    width: max-content;
+  }
+  .social-marquee:hover {
+    animation-play-state: paused;
+  }
+</style>
