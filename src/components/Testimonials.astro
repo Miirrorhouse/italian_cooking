@@ -1,0 +1,48 @@
+---
+const reviews = [
+  {
+    score: "★★★★★",
+    text: "I almost didn't subscribe - I figured I could find Italian recipes anywhere. What I didn't expect was to feel like I actually knew the person who made the dish. It's not the recipe that got me. It's watching her make it.",
+    name: "Jamie R.",
+  },
+  {
+    score: "★★★★★",
+    text: "I signed up mostly because cancelling seemed easy. Six months later I'm still here. I made Nonna Eligia's Sunday sauce for my parents and my mum cried — said it tasted like her own mother's. Didn't expect a recipe subscription to do that.",
+    name: "Claire B.",
+  },
+  {
+    score: "★★★★★",
+    text: "I was on the fence about paying for a recipe site. But a new recipe every Friday and I've genuinely looked forward to it every week. Three months in, I've cooked things I never would have found on my own. Best $55 this year.",
+    name: "Marcus T.",
+  },
+];
+---
+
+<section class="bg-warm-300 py-20 lg:py-28">
+  <div class="mx-auto max-w-[1400px] px-6 lg:px-12">
+    <h2
+      class="text-center font-serif text-3xl font-normal leading-snug text-text-primary lg:text-[45px]"
+    >
+      The <span class="text-blue-accent">dinner table</span> doesn't lie.
+    </h2>
+
+    <div class="mt-14 grid grid-cols-1 gap-3 md:grid-cols-3">
+      {
+        reviews.map((review) => (
+          <div class="rounded-2xl bg-white p-8 shadow-sm">
+            <p class="text-base font-normal text-[#F6BF40]">
+              {review.score}
+            </p>
+            <p class="text-sm text-text-secondary">Review Score</p>
+            <p class="mt-4 font-serif text-lg leading-relaxed text-text-primary">
+              {review.text}
+            </p>
+            <p class="mt-4 font-sans text-base font-semibold text-text-primary">
+              {review.name}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

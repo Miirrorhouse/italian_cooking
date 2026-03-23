@@ -1,0 +1,132 @@
+---
+import paolaBonucci from "../../assets/nonnas/paola_bonucci.png";
+import saraDeLuca from "../../assets/nonnas/sara_de_luca.png";
+import giovanniRossi from "../../assets/nonnas/giovanni_rossi.png";
+import martinaLombardi from "../../assets/nonnas/martina_lombardi.png";
+
+const nonnas = [
+  {
+    name: "Paola Bonucci",
+    location: "Rome, Italy",
+    image: paolaBonucci,
+  },
+  {
+    name: "Sara De Luca",
+    location: "Milano",
+    image: saraDeLuca,
+  },
+  {
+    name: "Giovanni Rossi",
+    location: "Genova",
+    image: giovanniRossi,
+  },
+  {
+    name: "Martina Lombardi",
+    location: "Florence",
+    image: martinaLombardi,
+  },
+];
+---
+
+<section class="bg-white py-20 lg:py-28" id="nonnas">
+  <div class="mx-auto max-w-[1400px] px-6 lg:px-12">
+    <h2
+      class="font-serif text-4xl font-normal leading-[0.93] text-text-primary lg:text-[50px]"
+    >
+      Meet the Nonnas<br />Behind the food
+    </h2>
+
+    <div class="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
+      {
+        nonnas.map((nonna) => (
+          <article class="group cursor-pointer">
+            <div class="relative overflow-hidden rounded-xl bg-warm-300">
+              <img
+                src={nonna.image.src}
+                alt={nonna.name}
+                width={nonna.image.width}
+                height={nonna.image.height}
+                class="h-[314px] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+              <div
+                class="absolute bottom-3 left-3 z-10 inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1 text-sm font-normal text-text-primary shadow-[0_2px_10px_rgba(0,0,0,0.12)]"
+                aria-hidden="true"
+              >
+                <svg
+                  class="h-4 w-4 shrink-0 text-text-primary"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M4 10c0 3.5 3.6 7 8 7s8-3.5 8-7" />
+                  <path d="M6 10V8a6 6 0 0 1 12 0v2" />
+                  <path d="M8 14h8" />
+                </svg>
+                <span>5</span>
+              </div>
+            </div>
+            <div class="mt-3 text-left">
+              <h3 class="font-serif text-lg font-normal leading-[1.2] text-text-primary">
+                {nonna.name}
+              </h3>
+              <p class="text-[14px] text-text-secondary">
+                {nonna.location}
+              </p>
+            </div>
+          </article>
+        ))
+      }
+
+      <article class="group flex cursor-pointer flex-col">
+        <div
+          class="relative flex h-[314px] w-full flex-col items-center justify-center rounded-xl bg-blue-accent px-4"
+        >
+          <div
+            class="absolute bottom-3 left-3 z-10 inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1 text-sm font-normal text-text-primary shadow-[0_2px_10px_rgba(0,0,0,0.12)]"
+            aria-hidden="true"
+          >
+            <svg
+              class="h-4 w-4 shrink-0 text-text-primary"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M4 10c0 3.5 3.6 7 8 7s8-3.5 8-7" />
+              <path d="M6 10V8a6 6 0 0 1 12 0v2" />
+              <path d="M8 14h8" />
+            </svg>
+            <span>5</span>
+          </div>
+
+          <p class="font-serif text-5xl font-normal leading-none text-white lg:text-[56px]">
+            36+
+          </p>
+          <p class="mt-2 font-sans text-sm font-medium text-white/90">
+            Nonnas Inside
+          </p>
+          <a
+            href="#pricing"
+            class="mt-5 inline-flex items-center justify-center rounded-full bg-white px-6 py-2.5 font-sans text-sm font-bold text-primary shadow-sm transition-all hover:bg-warm-100 active:scale-[0.98]"
+          >
+            See them all
+          </a>
+        </div>
+        <div class="mt-3 text-left">
+          <h3 class="font-serif text-lg font-normal leading-[1.2] text-text-primary">
+            &amp; many More Nonnas
+          </h3>
+          <p class="text-[14px] text-text-secondary">
+            From all over Italy
+          </p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
