@@ -1,36 +1,38 @@
 ---
 const recipes = [
   {
-    title: "Tagliatelle with porcini and rustic pancetta",
-    nonna: "Nonna Maria",
-    time: "45 min",
-    likes: 128,
-    image: "/Tagliatelle_img.png",
+    title: "Baked Pasta with Eggplant",
+    nonna: "Nonna Silvia",
+    time: "10 min",
+    likes: 28,
+    image: "/baked_pasta_recipe.png",
   },
   {
-    title: "Panna Cotta con Fragole Fresche",
-    nonna: "Nonna Ada",
-    time: "3 hr",
-    likes: 256,
-    image: "/panna_cotta_img.png",
+    title: "Eggplant Parmigiana",
+    nonna: "Nonna Franca",
+    time: "15 min",
+    likes: 75,
+    image: "/eggplant_recipe.png",
   },
   {
-    title: "Sformato di Carciofi con Parmigiano e Panna Cotta",
-    nonna: "Nonna Lucia",
+    title: "Carbonara",
+    nonna: "Nonna Silvana",
     time: "30 min",
-    likes: 94,
-    image: "/Sformato_img.png",
+    likes: 10,
+    free: true,
+    image: "/carbonara_recipe.png",
   },
 ];
 
 const allRecipes = [
   ...recipes,
   {
-    title: "Tiramisu Tradizionale",
-    nonna: "Nonna Rosa",
-    time: "4 hr",
-    likes: 412,
-    image: null,
+    title: "Handmade Orecchiette",
+    nonna: "Nonna Franca",
+    time: "20 min",
+    likes: 12,
+    free: true,
+    image: "/handmade_recipe.png",
   },
 ];
 ---
@@ -51,7 +53,7 @@ const allRecipes = [
       <div class="-mx-6 overflow-hidden">
         <div class="marquee-track flex gap-4 px-6">
           {
-            [...recipes, ...recipes].map((recipe, i) => (
+            [...allRecipes, ...allRecipes].map((recipe, i) => (
               <article class="w-[220px] shrink-0 cursor-pointer">
                 <div class="relative overflow-hidden rounded-2xl">
                   <img
@@ -60,9 +62,16 @@ const allRecipes = [
                     class="h-[260px] w-full object-cover"
                     loading="lazy"
                   />
-                  <span class="absolute left-3 top-3 z-10 inline-flex items-center rounded-full bg-white px-3 py-1 text-sm font-normal tracking-tight text-text-primary shadow-[0_2px_12px_rgba(0,0,0,0.1)]">
-                    {recipe.time}
-                  </span>
+                  <div class="absolute left-3 top-3 z-10 flex items-center gap-1.5">
+                    <span class="inline-flex items-center rounded-full bg-white px-3 py-1 text-sm font-normal tracking-tight text-text-primary shadow-[0_2px_12px_rgba(0,0,0,0.1)]">
+                      {recipe.time}
+                    </span>
+                    {recipe.free && (
+                      <span class="inline-flex items-center rounded-full bg-primary px-3 py-1 text-sm font-bold text-white shadow-[0_2px_12px_rgba(0,0,0,0.1)]">
+                        Free
+                      </span>
+                    )}
+                  </div>
                   <div
                     class="absolute bottom-3 right-3 z-10 inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1 text-sm font-normal text-text-primary shadow-[0_2px_12px_rgba(0,0,0,0.1)]"
                   >
@@ -111,9 +120,16 @@ const allRecipes = [
                     class="h-[280px] w-full object-cover transition-transform duration-500 group-hover:scale-105 lg:h-[314px]"
                     loading="lazy"
                   />
-                  <span class="absolute left-3 top-3 z-10 inline-flex items-center rounded-full bg-white px-3 py-1 text-sm font-normal tracking-tight text-text-primary shadow-[0_2px_12px_rgba(0,0,0,0.1)]">
-                    {recipe.time}
-                  </span>
+                  <div class="absolute left-3 top-3 z-10 flex items-center gap-1.5">
+                    <span class="inline-flex items-center rounded-full bg-white px-3 py-1 text-sm font-normal tracking-tight text-text-primary shadow-[0_2px_12px_rgba(0,0,0,0.1)]">
+                      {recipe.time}
+                    </span>
+                    {recipe.free && (
+                      <span class="inline-flex items-center rounded-full bg-primary px-3 py-1 text-sm font-bold text-white shadow-[0_2px_12px_rgba(0,0,0,0.1)]">
+                        Free
+                      </span>
+                    )}
+                  </div>
                   <button
                     type="button"
                     class="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center text-white transition-transform active:scale-[0.98]"
@@ -156,6 +172,19 @@ const allRecipes = [
           </article>
         ))
       }
+    </div>
+
+    <!-- Desktop CTA -->
+    <div class="mt-10 hidden justify-center sm:flex">
+      <a
+        href="#pricing"
+        class="group inline-flex items-center gap-2 rounded-full border-2 border-primary bg-primary px-8 py-2 font-sans text-base font-bold text-white transition-all duration-[250ms] [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-px hover:bg-transparent hover:text-primary active:translate-y-0"
+      >
+        Explore all recipes
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-[250ms] [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-1">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
     </div>
   </div>
 </section>
