@@ -49,6 +49,7 @@
         </div>
 
         <form
+          id="newsletter-form"
           class="flex flex-col gap-3"
           method="post"
           action="#"
@@ -70,6 +71,20 @@
             Send me the recipe
           </button>
         </form>
+
+        <script>
+          document.getElementById('newsletter-form')?.addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const email = (document.getElementById('newsletter-email') as HTMLInputElement).value;
+            fetch('https://script.google.com/macros/s/AKfycbwQ4jc2N4f5DltkTX0Ub_EXSEwZK6oqeTo0BIBSagxd2kJwFYFW4h0u2nF-fkYO6AQf/exec', {
+              method: 'POST',
+              mode: 'no-cors',
+              body: JSON.stringify({ email }),
+            });
+            (document.getElementById('newsletter-form') as HTMLFormElement).outerHTML =
+              '<p class="font-sans text-base font-medium text-white">You\'re on the list! We\'ll be in touch.</p>';
+          });
+        </script>
       </div>
 
     </div>
