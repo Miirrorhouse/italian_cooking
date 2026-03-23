@@ -21,6 +21,10 @@ const recipes = [
     likes: 94,
     image: "/Sformato_img.png",
   },
+];
+
+const allRecipes = [
+  ...recipes,
   {
     title: "Tiramisu Tradizionale",
     nonna: "Nonna Rosa",
@@ -31,18 +35,72 @@ const recipes = [
 ];
 ---
 
-<section class="bg-warm-300 py-20 lg:py-28">
+<section class="bg-warm-300 py-16 lg:py-24">
   <div class="mx-auto max-w-[1400px] px-6 lg:px-12">
-    <div class="flex items-center justify-center gap-2">
+    <div class="flex flex-col items-center justify-center gap-2 sm:flex-row">
       <img src="/taste_inside-icon.svg" alt="" class="h-[35px] w-[35px]" />
-      <h2 class="font-serif text-2xl font-normal text-dark">
+      <h2
+        class="text-center font-serif text-4xl font-normal leading-[0.93] text-text-primary lg:text-[50px]"
+      >
         A Taste of What's Inside
       </h2>
     </div>
 
-    <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    <!-- Mobile marquee -->
+    <div class="mt-8 sm:hidden">
+      <div class="-mx-6 overflow-hidden">
+        <div class="marquee-track flex gap-4 px-6">
+          {
+            [...recipes, ...recipes].map((recipe, i) => (
+              <article class="w-[220px] shrink-0 cursor-pointer">
+                <div class="relative overflow-hidden rounded-2xl">
+                  <img
+                    src={recipe.image}
+                    alt={recipe.title}
+                    class="h-[260px] w-full object-cover"
+                    loading="lazy"
+                  />
+                  <span class="absolute left-3 top-3 z-10 inline-flex items-center rounded-full bg-white px-3 py-1 text-sm font-normal tracking-tight text-text-primary shadow-[0_2px_12px_rgba(0,0,0,0.1)]">
+                    {recipe.time}
+                  </span>
+                  <div
+                    class="absolute bottom-3 right-3 z-10 inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1 text-sm font-normal text-text-primary shadow-[0_2px_12px_rgba(0,0,0,0.1)]"
+                  >
+                    <svg class="h-[18px] w-[18px] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                    </svg>
+                    <span>{recipe.likes}</span>
+                  </div>
+                </div>
+                <div class="mt-3 space-y-1">
+                  <h3 class="font-serif text-lg font-normal leading-[1.2] text-text-primary">
+                    {recipe.title}
+                  </h3>
+                  <p class="text-[14px] text-text-secondary">{recipe.nonna}</p>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="mt-8">
+        <a
+          href="#pricing"
+          class="group flex w-full items-center justify-center gap-2 rounded-full border-2 border-primary bg-primary px-8 py-2 font-sans text-base font-bold text-white transition-all duration-[250ms] [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-px hover:bg-transparent hover:text-primary active:translate-y-0"
+        >
+          See all recipes
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-[250ms] [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-1">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Desktop grid -->
+    <div class="mt-8 hidden grid-cols-2 gap-4 sm:grid lg:grid-cols-4">
       {
-        recipes.map((recipe) => (
+        allRecipes.map((recipe) => (
           <article class="group cursor-pointer">
             <div class="relative overflow-hidden rounded-2xl">
               {recipe.image ? (
@@ -50,57 +108,34 @@ const recipes = [
                   <img
                     src={recipe.image}
                     alt={recipe.title}
-                    class="h-[240px] w-full object-cover transition-transform duration-500 group-hover:scale-105 sm:h-[280px] lg:h-[314px]"
+                    class="h-[280px] w-full object-cover transition-transform duration-500 group-hover:scale-105 lg:h-[314px]"
                     loading="lazy"
                   />
-
-                  <span
-                    class="absolute left-3 top-3 z-10 inline-flex items-center rounded-full bg-white px-3 py-1 text-sm font-normal tracking-tight text-text-primary shadow-[0_2px_12px_rgba(0,0,0,0.1)]"
-                  >
+                  <span class="absolute left-3 top-3 z-10 inline-flex items-center rounded-full bg-white px-3 py-1 text-sm font-normal tracking-tight text-text-primary shadow-[0_2px_12px_rgba(0,0,0,0.1)]">
                     {recipe.time}
                   </span>
-
                   <button
                     type="button"
                     class="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center text-white transition-transform active:scale-[0.98]"
                     aria-label={`Save ${recipe.title}`}
                   >
-                    <svg
-                      class="h-[18px] w-[18px]"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      aria-hidden="true"
-                    >
+                    <svg class="h-[18px] w-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                       <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
                     </svg>
                   </button>
-
                   <div
                     class="absolute bottom-3 right-3 z-10 inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1 text-sm font-normal text-text-primary shadow-[0_2px_12px_rgba(0,0,0,0.1)]"
                     role="status"
                     aria-label={`${recipe.likes} likes`}
                   >
-                    <svg
-                      class="h-[18px] w-[18px] shrink-0"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      aria-hidden="true"
-                    >
+                    <svg class="h-[18px] w-[18px] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                       <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                     </svg>
                     <span>{recipe.likes}</span>
                   </div>
                 </>
               ) : (
-                <div class="flex h-[240px] w-full items-center justify-center bg-blue-accent sm:h-[280px] lg:h-[314px]">
+                <div class="flex h-[280px] w-full items-center justify-center bg-blue-accent lg:h-[314px]">
                   <span class="inline-flex items-center gap-2 font-serif text-xl font-normal text-white">
                     See all recipes
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -124,3 +159,17 @@ const recipes = [
     </div>
   </div>
 </section>
+
+<style>
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .marquee-track {
+    animation: marquee 18s linear infinite;
+    width: max-content;
+  }
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+</style>

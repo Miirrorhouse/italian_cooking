@@ -17,9 +17,15 @@
   </div>
 
   <div
-    class="relative z-10 mx-auto flex w-full max-w-[1400px] flex-1 items-end justify-between px-6 pb-16 pt-8 lg:px-12"
+    class="relative z-10 mx-auto flex w-full max-w-[1400px] flex-1 items-end justify-between px-6 pb-6 pt-8 lg:pb-16 lg:px-12"
   >
-    <div class="max-w-xl">
+    <div class="w-full max-w-xl">
+      <div class="mb-4 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-4 py-2 backdrop-blur-md lg:hidden">
+        <span class="h-[6px] w-[6px] flex-shrink-0 rounded-full bg-[#FF961E]"></span>
+        <span class="text-sm font-bold text-white">40</span>
+        <span class="text-sm text-white/80">Nonnas on the platform</span>
+      </div>
+
       <h1
         class="font-serif text-[48px] font-normal leading-[0.95] text-white sm:text-[64px] lg:text-[96px]"
         style="letter-spacing: -1px;"
@@ -35,7 +41,7 @@
 
       <a
         href="#pricing"
-        class="group mt-10 inline-flex items-center gap-2 rounded-full border-2 border-primary bg-primary px-8 py-2 font-sans text-base font-bold text-white transition-all duration-[250ms] [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-px hover:bg-transparent hover:text-primary active:translate-y-0"
+        class="group mt-10 inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-primary bg-primary px-8 py-2 font-sans text-base font-bold text-white transition-all duration-[250ms] [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-px hover:bg-transparent hover:text-primary active:translate-y-0 sm:w-auto sm:justify-start"
       >
         Cook with a Nonna
         <svg
@@ -53,6 +59,7 @@
           <path d="M5 12h14M12 5l7 7-7 7"/>
         </svg>
       </a>
+
     </div>
 
     <div class="hidden rounded-xl border border-white/30 bg-white/20 p-5 backdrop-blur-md lg:block">
