@@ -32,7 +32,7 @@ const nonnas = [
   <div class="mx-auto max-w-[1400px] px-6 lg:px-12">
     <h2
       class="text-center font-serif text-4xl font-normal leading-[0.93] text-text-primary lg:text-[50px]"
-      data-animate
+      data-reveal
     >
       Meet the Nonnas<br />Behind the food
     </h2>
@@ -91,7 +91,7 @@ const nonnas = [
     </div>
 
     <!-- Desktop grid -->
-    <div class="mt-12 hidden grid-cols-3 gap-4 sm:grid sm:gap-4 lg:grid-cols-5 lg:gap-6">
+    <div class="mt-12 hidden grid-cols-3 gap-4 sm:grid sm:gap-4 lg:grid-cols-5 lg:gap-6" data-stagger>
       {
         nonnas.map((nonna) => (
           <article class="group cursor-pointer">

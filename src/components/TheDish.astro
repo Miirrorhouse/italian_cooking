@@ -34,19 +34,19 @@ const features = [
       <div>
         <p
           class="badge"
-          data-animate
+          data-reveal
         >
           The Dish
         </p>
         <h2
           class="mt-4 font-serif text-[36px] font-semibold leading-[1.05] text-text-primary lg:text-[56px]"
-          data-animate data-delay="0.1s"
+          data-reveal
         >
           Anyone can write<br />a recipe. Only a<br />Nonna knows<br />how it
           tastes
         </h2>
 
-        <div class="mt-10 flex items-start gap-3" data-animate data-delay="0.2s">
+        <div class="mt-10 flex items-start gap-3" data-reveal>
           <div class="mt-1 h-10 w-[3px] flex-shrink-0 rounded-full bg-primary">
           </div>
           <p class="text-base leading-relaxed text-text-secondary">
@@ -59,6 +59,7 @@ const features = [
         <ul
           class="mt-10 flex max-w-xl list-none flex-col gap-4 p-0"
           aria-label="What you get with anana"
+          data-stagger
         >
           {
             features.map((item) => (
@@ -110,7 +111,7 @@ const features = [
         </div>
       </div>
 
-      <div class="relative order-first lg:order-last lg:sticky lg:top-24 lg:self-start" data-animate data-delay="0.15s">
+      <div class="relative order-first lg:order-last lg:sticky lg:top-24 lg:self-start" data-reveal="scale">
         <div class="relative overflow-hidden rounded-xl">
           <img
             src="/anyone_img.png"
