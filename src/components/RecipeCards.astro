@@ -1,18 +1,23 @@
 ---
+import bakedPasta from "../../assets/images/baked_pasta_recipe.png";
+import eggplant from "../../assets/images/eggplant_recipe.png";
+import carbonara from "../../assets/images/carbonara_recipe.png";
+import handmade from "../../assets/images/handmade_recipe.png";
+
 const recipes = [
   {
     title: "Baked Pasta with Eggplant",
     nonna: "Nonna Silvia",
     time: "10 min",
     likes: 28,
-    image: "/baked_pasta_recipe.png",
+    image: bakedPasta,
   },
   {
     title: "Eggplant Parmigiana",
     nonna: "Nonna Franca",
     time: "15 min",
     likes: 75,
-    image: "/eggplant_recipe.png",
+    image: eggplant,
   },
   {
     title: "Carbonara",
@@ -20,7 +25,7 @@ const recipes = [
     time: "30 min",
     likes: 10,
     free: true,
-    image: "/carbonara_recipe.png",
+    image: carbonara,
   },
 ];
 
@@ -32,7 +37,7 @@ const allRecipes = [
     time: "20 min",
     likes: 12,
     free: true,
-    image: "/handmade_recipe.png",
+    image: handmade,
   },
 ];
 ---
@@ -57,7 +62,7 @@ const allRecipes = [
               <article class="w-[220px] shrink-0 cursor-pointer">
                 <div class="relative overflow-hidden rounded-2xl">
                   <img
-                    src={recipe.image}
+                    src={recipe.image.src}
                     alt={recipe.title}
                     class="h-[260px] w-full object-cover"
                     loading="lazy"
@@ -115,7 +120,7 @@ const allRecipes = [
               {recipe.image ? (
                 <>
                   <img
-                    src={recipe.image}
+                    src={recipe.image.src}
                     alt={recipe.title}
                     class="h-[280px] w-full object-cover transition-transform duration-500 group-hover:scale-105 lg:h-[314px]"
                     loading="lazy"
