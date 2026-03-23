@@ -54,6 +54,25 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? "https://anana.co
   </head>
   <body class="min-h-[100dvh] bg-warm-100 text-text-primary antialiased">
     <slot />
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("in-view");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+
+      document.querySelectorAll("[data-animate]").forEach((el, i) => {
+        const delay = el.getAttribute("data-delay");
+        if (delay) (el as HTMLElement).style.transitionDelay = delay;
+        observer.observe(el);
+      });
+    </script>
   </body>
 </html>
 
