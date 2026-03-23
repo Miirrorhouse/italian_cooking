@@ -31,12 +31,12 @@ const nonnas = [
 <section class="bg-white py-20 lg:py-28" id="nonnas">
   <div class="mx-auto max-w-[1400px] px-6 lg:px-12">
     <h2
-      class="font-serif text-4xl font-normal leading-[0.93] text-text-primary lg:text-[50px]"
+      class="font-serif text-2xl font-normal leading-[0.93] text-text-primary sm:text-4xl lg:text-[50px]"
     >
       Meet the Nonnas<br />Behind the food
     </h2>
 
-    <div class="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
+    <div class="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5 lg:gap-6">
       {
         nonnas.map((nonna) => (
           <article class="group cursor-pointer">
@@ -46,7 +46,7 @@ const nonnas = [
                 alt={nonna.name}
                 width={nonna.image.width}
                 height={nonna.image.height}
-                class="h-[314px] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                class="h-[200px] w-full object-cover transition-transform duration-500 group-hover:scale-105 sm:h-[260px] lg:h-[314px]"
                 loading="lazy"
               />
               <div
@@ -83,7 +83,7 @@ const nonnas = [
 
       <article class="group flex cursor-pointer flex-col">
         <div
-          class="relative flex h-[314px] w-full flex-col items-center justify-center rounded-xl bg-blue-accent px-4"
+          class="relative flex h-[200px] w-full flex-col items-center justify-center rounded-xl bg-blue-accent px-4 sm:h-[260px] lg:h-[314px]"
         >
           <div
             class="absolute bottom-3 left-3 z-10 inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1 text-sm font-normal text-text-primary shadow-[0_2px_10px_rgba(0,0,0,0.12)]"
