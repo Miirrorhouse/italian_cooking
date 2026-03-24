@@ -112,6 +112,40 @@
   animation: hero-fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
+/* ── Pricing cards: premium gradient stroke + hovers ─────────── */
+
+@property --pricing-premium-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.pricing-premium-border {
+  --pricing-premium-angle: 0deg;
+  background: conic-gradient(
+    from var(--pricing-premium-angle),
+    var(--color-primary),
+    var(--color-yellow),
+    var(--color-blue-accent),
+    var(--color-blue-soft),
+    var(--color-primary)
+  );
+  animation: pricing-premium-rotate 6s linear infinite;
+}
+
+@keyframes pricing-premium-rotate {
+  to {
+    --pricing-premium-angle: 360deg;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pricing-premium-border {
+    animation: none;
+    --pricing-premium-angle: 35deg;
+  }
+}
+
 html {
   font-family: var(--font-sans);
   color: var(--color-text-primary);

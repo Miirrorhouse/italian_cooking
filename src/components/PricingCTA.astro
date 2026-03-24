@@ -40,56 +40,107 @@
 
     <div class="space-y-5" data-stagger>
       <div
-        class="relative overflow-hidden rounded-2xl bg-[#5D82E8] p-5 shadow-lg"
+        class="pricing-premium-border group relative rounded-2xl p-[2px] shadow-xl outline outline-2 outline-offset-2 outline-transparent transition-[outline-color] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:outline-primary/50 active:scale-[0.98]"
       >
         <div
-          class="relative grid gap-8 text-center lg:grid-cols-2 lg:items-center lg:gap-12 lg:text-left"
+          class="relative rounded-[14px] bg-warm-100 p-5 ring-1 ring-black/[0.04] max-lg:pb-14"
         >
-          <div class="text-center lg:text-left">
+          <div
+            class="flex flex-col gap-8 text-center lg:grid lg:grid-cols-2 lg:items-start lg:gap-12 lg:text-left"
+          >
             <span
-              class="mb-4 inline-flex rounded-full bg-yellow px-3 py-1 font-sans text-sm font-bold text-text-primary"
+              class="inline-flex items-center justify-center self-center rounded-full bg-yellow px-3 py-1 font-sans text-sm font-bold text-text-primary motion-safe:transition-transform motion-safe:duration-300 motion-safe:hover:scale-105 lg:hidden"
             >
               Save 10%
             </span>
-            <p
-              class="font-sans text-xs font-bold uppercase tracking-[0.12em] text-yellow lg:text-sm"
+
+            <div class="text-center lg:text-left">
+              <p
+                class="font-sans text-xs font-bold uppercase tracking-[0.12em] text-primary lg:text-sm"
+              >
+                Annual – Best Value
+              </p>
+              <p class="mt-3 font-sans text-5xl font-bold leading-none text-text-primary lg:text-6xl">
+                $55
+              </p>
+              <p class="mt-3 font-sans text-base text-text-secondary">
+                Per year · $4.58 a month
+              </p>
+            </div>
+
+            <div
+              class="flex flex-col items-center justify-center gap-1.5 text-center lg:items-end lg:justify-start lg:gap-2 lg:self-start lg:text-right"
             >
-              Annual – Best Value
-            </p>
-            <p class="mt-3 font-sans text-5xl font-bold leading-none text-white lg:text-6xl">
-              $55
-            </p>
-            <p class="mt-3 font-sans text-base text-white/95">
-              Per year · $4.58 a month
-            </p>
+              <span
+                class="hidden rounded-full bg-yellow px-3 py-1 font-sans text-sm font-bold text-text-primary motion-safe:transition-transform motion-safe:duration-300 motion-safe:hover:scale-105 lg:inline-flex"
+              >
+                Save 10%
+              </span>
+              <p
+                class="font-sans text-base font-medium leading-snug text-text-primary"
+              >
+                Full access<br />to everything
+              </p>
+            </div>
           </div>
 
-          <div
-            class="flex flex-col items-center justify-center text-center lg:items-end lg:justify-center lg:text-right"
+          <span
+            class="pointer-events-none absolute bottom-4 right-4 z-10 inline-flex items-center gap-0.5 rounded-full bg-primary/10 px-2.5 py-1 font-sans text-[11px] font-bold uppercase tracking-[0.14em] text-primary opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100 motion-safe:translate-y-1.5 motion-safe:transition-[opacity,transform] motion-safe:duration-300 motion-safe:ease-[cubic-bezier(0.22,1,0.36,1)] motion-safe:group-hover:translate-y-0 motion-reduce:translate-y-0"
+            aria-hidden="true"
           >
-            <p
-              class="font-sans text-base font-medium leading-snug text-white"
+            GO
+            <svg
+              class="h-3.5 w-3.5 shrink-0"
+              viewBox="0 0 256 256"
+              fill="currentColor"
+              aria-hidden="true"
             >
-              Full access<br />to everything
-            </p>
-          </div>
+              <path
+                d="M224.49 136.49l-72 72a12 12 0 01-17-17L187 140H40a12 12 0 010-24h147l-51.49-51.52a12 12 0 0117-17l72 72a12 12 0 010 17z"
+              />
+            </svg>
+          </span>
         </div>
       </div>
 
       <div
-        class="flex flex-col items-center gap-4 rounded-2xl bg-blue-soft/75 p-5 text-center backdrop-blur-sm lg:flex-row lg:items-center lg:justify-between lg:text-left"
+        class="group relative flex flex-col items-center gap-4 rounded-2xl bg-dark-navy p-5 text-center shadow-lg ring-1 ring-white/[0.08] outline outline-2 outline-offset-2 outline-transparent transition-[outline-color] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:outline-white/35 active:scale-[0.98] max-lg:pb-14 lg:flex-row lg:items-start lg:justify-between lg:text-left"
       >
-        <div class="order-2 space-y-1 text-center lg:order-1 lg:text-left">
-          <p class="text-5xl font-bold text-white">$5</p>
-          <p class="text-base text-white/80">per month</p>
-          <p class="text-base text-white/60">billed monthly</p>
-        </div>
-        <div class="order-1 text-center lg:order-2 lg:text-right">
-          <p class="text-base font-bold text-white">
-            Monthly plan
+        <div class="order-1 text-center lg:text-left">
+          <p
+            class="font-sans text-xs font-bold uppercase tracking-[0.12em] text-white/80 lg:text-sm"
+          >
+            Monthly
           </p>
-          <p class="text-base text-white/60">Cancel anytime</p>
+          <p class="mt-3 font-sans text-5xl font-bold leading-none text-white lg:text-6xl">
+            $5
+          </p>
+          <p class="mt-3 font-sans text-base text-white/85">
+            Per month · Cancel anytime
+          </p>
         </div>
+        <div class="order-2 text-center lg:self-start lg:text-right">
+          <p class="font-sans text-base font-medium leading-snug text-white/95">
+            Full access<br />to everything
+          </p>
+        </div>
+
+        <span
+          class="pointer-events-none absolute bottom-4 right-4 z-10 inline-flex items-center gap-0.5 rounded-full bg-white/10 px-2.5 py-1 font-sans text-[11px] font-bold uppercase tracking-[0.14em] text-yellow opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100 motion-safe:translate-y-1.5 motion-safe:transition-[opacity,transform] motion-safe:duration-300 motion-safe:ease-[cubic-bezier(0.22,1,0.36,1)] motion-safe:group-hover:translate-y-0 motion-reduce:translate-y-0"
+          aria-hidden="true"
+        >
+          GO
+          <svg
+            class="h-3.5 w-3.5 shrink-0"
+            viewBox="0 0 256 256"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              d="M224.49 136.49l-72 72a12 12 0 01-17-17L187 140H40a12 12 0 010-24h147l-51.49-51.52a12 12 0 0117-17l72 72a12 12 0 010 17z"
+            />
+          </svg>
+        </span>
       </div>
 
       <div class="flex justify-center pt-1 lg:hidden">

@@ -73,16 +73,30 @@
         </form>
 
         <script>
+          const APPS_SCRIPT_URL =
+            'https://script.google.com/a/macros/anana.us/s/AKfycbyFoVCOW2njNU4BAcCRLWpTBNI8UU3J-5WMfSwg4n0ux-dXGWnqkwyJK_o4Dyb7rJPL/exec';
+
           document.getElementById('newsletter-form')?.addEventListener('submit', async function (e) {
             e.preventDefault();
-            const email = (document.getElementById('newsletter-email') as HTMLInputElement).value;
-            fetch('https://script.google.com/macros/s/AKfycbwQ4jc2N4f5DltkTX0Ub_EXSEwZK6oqeTo0BIBSagxd2kJwFYFW4h0u2nF-fkYO6AQf/exec', {
-              method: 'POST',
-              mode: 'no-cors',
-              body: JSON.stringify({ email }),
-            });
-            (document.getElementById('newsletter-form') as HTMLFormElement).outerHTML =
-              '<p class="font-sans text-base font-medium text-white">You\'re on the list! We\'ll be in touch.</p>';
+            const form = document.getElementById('newsletter-form');
+            const input = document.getElementById('newsletter-email');
+            if (!form || !(input instanceof HTMLInputElement)) return;
+
+            const email = input.value.trim();
+            if (!email) return;
+
+            try {
+              await fetch(APPS_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                body: JSON.stringify({ email }),
+              });
+              form.outerHTML =
+                '<p class="font-sans text-base font-medium text-white">You\'re on the list! We\'ll be in touch.</p>';
+            } catch {
+              alert('Something went wrong. Try again.');
+            }
           });
         </script>
       </div>

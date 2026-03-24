@@ -24,7 +24,6 @@ const recipes = [
     nonna: "Nonna Silvana",
     time: "30 min",
     likes: 10,
-    free: true,
     image: carbonara,
   },
 ];
@@ -36,7 +35,6 @@ const allRecipes = [
     nonna: "Nonna Franca",
     time: "20 min",
     likes: 12,
-    free: true,
     image: handmade,
   },
 ];
@@ -67,16 +65,9 @@ const allRecipes = [
                     class="h-[260px] w-full object-cover"
                     loading="lazy"
                   />
-                  <div class="absolute left-3 top-3 z-10 flex items-center gap-1.5">
-                    <span class="inline-flex items-center rounded-full bg-white px-3 py-1 text-sm font-normal tracking-tight text-text-primary shadow-[0_2px_12px_rgba(0,0,0,0.1)]">
-                      {recipe.time}
-                    </span>
-                    {recipe.free && (
-                      <span class="inline-flex items-center rounded-full bg-primary px-3 py-1 text-sm font-bold text-white shadow-[0_2px_12px_rgba(0,0,0,0.1)]">
-                        Free
-                      </span>
-                    )}
-                  </div>
+                  <span class="absolute left-3 top-3 z-10 inline-flex items-center rounded-full bg-white px-3 py-1 text-sm font-normal tracking-tight text-text-primary shadow-[0_2px_12px_rgba(0,0,0,0.1)]">
+                    {recipe.time}
+                  </span>
                   <div
                     class="absolute bottom-3 right-3 z-10 inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1 text-sm font-normal text-text-primary shadow-[0_2px_12px_rgba(0,0,0,0.1)]"
                   >
@@ -125,16 +116,9 @@ const allRecipes = [
                     class="h-[280px] w-full object-cover transition-transform duration-500 group-hover:scale-105 lg:h-[314px]"
                     loading="lazy"
                   />
-                  <div class="absolute left-3 top-3 z-10 flex items-center gap-1.5">
-                    <span class="inline-flex items-center rounded-full bg-white px-3 py-1 text-sm font-normal tracking-tight text-text-primary shadow-[0_2px_12px_rgba(0,0,0,0.1)]">
-                      {recipe.time}
-                    </span>
-                    {recipe.free && (
-                      <span class="inline-flex items-center rounded-full bg-primary px-3 py-1 text-sm font-bold text-white shadow-[0_2px_12px_rgba(0,0,0,0.1)]">
-                        Free
-                      </span>
-                    )}
-                  </div>
+                  <span class="absolute left-3 top-3 z-10 inline-flex items-center rounded-full bg-white px-3 py-1 text-sm font-normal tracking-tight text-text-primary shadow-[0_2px_12px_rgba(0,0,0,0.1)]">
+                    {recipe.time}
+                  </span>
                   <button
                     type="button"
                     class="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center text-white transition-transform active:scale-[0.98]"
