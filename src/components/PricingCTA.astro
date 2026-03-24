@@ -1,5 +1,5 @@
 ---
-
+const SIGNUP_URL = "https://www.cookwithanana.com/signup";
 ---
 
 <section
@@ -31,7 +31,7 @@
         anytime.
       </p>
       <a
-        href="#"
+        href={SIGNUP_URL}
         class="mt-10 hidden items-center justify-center rounded-full border-2 border-yellow bg-yellow px-8 py-2 font-sans text-base font-bold text-dark transition-all duration-[250ms] [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-px hover:bg-yellow-warm hover:border-yellow-warm active:translate-y-0 lg:inline-flex"
       >
         Get Inside an Italian Kitchen
@@ -39,8 +39,10 @@
     </div>
 
     <div class="space-y-5" data-stagger>
-      <div
-        class="pricing-premium-border group relative rounded-2xl p-[2px] shadow-xl outline outline-2 outline-offset-2 outline-transparent transition-[outline-color] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:outline-primary/50 active:scale-[0.98]"
+      <a
+        href={SIGNUP_URL}
+        aria-label="Sign up for the annual plan, 55 dollars per year"
+        class="pricing-premium-border group relative block rounded-2xl p-[2px] shadow-xl outline outline-2 outline-offset-2 outline-transparent transition-[outline-color] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:outline-primary/50 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-yellow active:scale-[0.98]"
       >
         <div
           class="relative rounded-[14px] bg-warm-100 p-5 ring-1 ring-black/[0.04] max-lg:pb-14"
@@ -101,10 +103,12 @@
             </svg>
           </span>
         </div>
-      </div>
+      </a>
 
-      <div
-        class="group relative flex flex-col items-center gap-4 rounded-2xl bg-dark-navy p-5 text-center shadow-lg ring-1 ring-white/[0.08] outline outline-2 outline-offset-2 outline-transparent transition-[outline-color] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:outline-white/35 active:scale-[0.98] max-lg:pb-14 lg:flex-row lg:items-start lg:justify-between lg:text-left"
+      <a
+        href={SIGNUP_URL}
+        aria-label="Sign up for the monthly plan, 5 dollars per month"
+        class="group relative flex flex-col items-center gap-4 rounded-2xl bg-dark-navy p-5 text-center shadow-lg ring-1 ring-white/[0.08] outline outline-2 outline-offset-2 outline-transparent transition-[outline-color] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:outline-white/35 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-yellow active:scale-[0.98] max-lg:pb-14 lg:flex-row lg:items-start lg:justify-between lg:text-left"
       >
         <div class="order-1 text-center lg:text-left">
           <p
@@ -141,11 +145,11 @@
             />
           </svg>
         </span>
-      </div>
+      </a>
 
       <div class="flex justify-center pt-1 lg:hidden">
         <a
-          href="#"
+          href={SIGNUP_URL}
           class="inline-flex items-center justify-center rounded-full border-2 border-yellow bg-yellow px-8 py-2 font-sans text-base font-bold text-dark transition-all duration-[250ms] [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-px hover:bg-yellow-warm hover:border-yellow-warm active:translate-y-0"
         >
           Get Inside an Italian Kitchen
