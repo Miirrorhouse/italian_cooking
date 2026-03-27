@@ -27,14 +27,8 @@ import isideImg from "../../assets/nonnas/iside_nonna.png";
   <div
     class="relative z-10 mx-auto flex w-full max-w-[1400px] flex-1 items-end justify-between px-6 pb-6 pt-8 lg:pb-16 lg:px-12"
   >
-    <div class="w-full max-w-xl">
-      <div class="hero-animate mb-4 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-4 py-2 backdrop-blur-md lg:hidden" style="animation-delay: 0.1s;">
-        <span class="h-[6px] w-[6px] flex-shrink-0 rounded-full bg-[#FF961E]"></span>
-        <span class="text-sm font-bold text-white">40</span>
-        <span class="text-sm text-white/80">Nonnas on the platform</span>
-      </div>
-
-      <div class="hero-animate mb-6 inline-flex items-center gap-3 rounded-full bg-white/95 py-2 pl-2 pr-5 backdrop-blur-sm" style="animation-delay: 0.15s;">
+    <div class="flex w-full max-w-xl flex-col">
+      <div class="hero-animate order-2 mb-0 mt-6 inline-flex items-center gap-3 rounded-full bg-white/95 py-2 pl-2 pr-5 backdrop-blur-sm lg:order-1 lg:mb-6 lg:mt-0" style="animation-delay: 0.15s;">
         <div class="flex -space-x-3">
           <img src={lilianaImg.src} alt="Home cook" class="h-10 w-10 rounded-full border-2 border-white object-cover" />
           <img src={annaImg.src} alt="Home cook" class="h-10 w-10 rounded-full border-2 border-white object-cover" />
@@ -53,22 +47,22 @@ import isideImg from "../../assets/nonnas/iside_nonna.png";
       </div>
 
       <h1
-        class="hero-animate font-serif text-[48px] font-normal leading-[0.95] text-white sm:text-[64px] lg:text-[96px]"
+        class="hero-animate order-1 font-serif text-[48px] font-normal leading-[0.95] text-white sm:text-[64px] lg:order-2 lg:text-[96px]"
         style="letter-spacing: -1px; animation-delay: 0.2s;"
       >
         Learn the recipes<br />the world is<br /><span class="italic text-[#FFD95F]">losing</span>
       </h1>
 
       <p
-        class="hero-animate mt-8 font-sans text-lg font-normal leading-[1.2] text-white/90"
+        class="hero-animate order-3 mt-8 font-sans text-lg font-normal leading-[1.2] text-white/90"
         style="animation-delay: 0.35s;"
       >
-        Step inside the kitchens of real Italian grandparents.<br />Learn the techniques, the instincts, and the stories<br />behind the dishes.
+        Step inside the kitchens of real Italian grandparents. Learn the techniques, the instincts, and the stories behind the dishes.
       </p>
 
       <a
         href="https://www.cookwithanana.com/signup"
-        class="hero-animate group mt-10 inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-primary bg-primary px-8 py-2 font-sans text-base font-bold text-white transition-all duration-[250ms] [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-px hover:border-white hover:bg-white hover:text-dark active:translate-y-0 sm:w-auto sm:justify-start"
+        class="hero-animate group order-4 mt-10 inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-primary bg-primary px-8 py-2 font-sans text-base font-bold text-white transition-all duration-[250ms] [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-px hover:border-white hover:bg-white hover:text-dark active:translate-y-0 sm:w-auto sm:justify-start"
         style="animation-delay: 0.5s;"
       >
         Cook with a Nonna
