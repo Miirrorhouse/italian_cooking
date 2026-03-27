@@ -1,5 +1,7 @@
 ---
-
+import lilianaImg from "../../assets/nonnas/lillian_nonna.png";
+import annaImg from "../../assets/nonnas/anna_nonna.png";
+import isideImg from "../../assets/nonnas/iside_nonna.png";
 ---
 
 <section class="relative flex min-h-[90vh] flex-col overflow-hidden pt-20">
@@ -32,18 +34,36 @@
         <span class="text-sm text-white/80">Nonnas on the platform</span>
       </div>
 
+      <div class="hero-animate mb-6 inline-flex items-center gap-3 rounded-full bg-white/95 py-2 pl-2 pr-5 backdrop-blur-sm" style="animation-delay: 0.15s;">
+        <div class="flex -space-x-3">
+          <img src={lilianaImg.src} alt="Home cook" class="h-10 w-10 rounded-full border-2 border-white object-cover" />
+          <img src={annaImg.src} alt="Home cook" class="h-10 w-10 rounded-full border-2 border-white object-cover" />
+          <img src={isideImg.src} alt="Home cook" class="h-10 w-10 rounded-full border-2 border-white object-cover" />
+        </div>
+        <div class="flex flex-col">
+          <div class="flex gap-0.5">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#EAB308" class="h-4 w-4"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#EAB308" class="h-4 w-4"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#EAB308" class="h-4 w-4"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#EAB308" class="h-4 w-4"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#EAB308" class="h-4 w-4"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <span class="text-sm font-semibold text-zinc-800">4.9/5 from 1K+ home cooks</span>
+        </div>
+      </div>
+
       <h1
         class="hero-animate font-serif text-[48px] font-normal leading-[0.95] text-white sm:text-[64px] lg:text-[96px]"
         style="letter-spacing: -1px; animation-delay: 0.2s;"
       >
-        Italian Cooking<br />taught by<br /><span class="text-[#FF961E]">Nonnas</span>
+        Learn the recipes<br />the world is<br /><span class="italic text-[#FFD95F]">losing</span>
       </h1>
 
       <p
         class="hero-animate mt-8 font-sans text-lg font-normal leading-[1.2] text-white/90"
         style="animation-delay: 0.35s;"
       >
-        Not Chefs.<br />Not food blogs.<br />The real thing.
+        Step inside the kitchens of real Italian grandparents.<br />Learn the techniques, the instincts, and the stories<br />behind the dishes.
       </p>
 
       <a
