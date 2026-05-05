@@ -16,17 +16,17 @@ const SIGNUP_URL = "https://www.cookwithanana.com/signup";
   <div
     class="relative z-10 mx-auto grid max-w-[1400px] grid-cols-1 gap-12 px-6 lg:grid-cols-2 lg:gap-24 lg:px-12"
   >
-    <div class="text-center lg:text-left">
+    <div class="text-left lg:text-left">
       <h2
         class="font-display text-[28px] leading-[1.1] text-white sm:text-4xl lg:text-[50px]"
         data-reveal
       >
-        You've Spent $5<br />on Less. Trust Us.
+        Less than a<br /><span class="text-yellow">coffee a week</span>
       </h2>
       <p
-        class="mx-auto mt-6 max-w-md text-base leading-relaxed text-white/90 lg:mx-0"
+        class="mt-6 max-w-md text-base leading-relaxed text-white/90 lg:mx-0"
       >
-        anana is $5 a month — that's full access to every Nonna, every recipe,
+        anana is $15 a month that's full access to every Nonna, every recipe,
         and every step-by-step video. No hidden fees. No nonsense. Cancel
         anytime.
       </p>
@@ -39,122 +39,112 @@ const SIGNUP_URL = "https://www.cookwithanana.com/signup";
     </div>
 
     <div class="space-y-5" data-stagger>
+
+      <!-- Annual card -->
       <a
         href={SIGNUP_URL}
-        aria-label="Sign up for the annual plan, 55 dollars per year"
+        aria-label="Sign up for the annual plan, 99 dollars per year"
         class="pricing-premium-border group relative block rounded-2xl p-[2px] shadow-xl outline outline-2 outline-offset-2 outline-transparent transition-[outline-color] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:outline-primary/50 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-yellow active:scale-[0.98]"
       >
         <div
-          class="relative rounded-[14px] bg-warm-100 p-5 ring-1 ring-black/[0.04] max-lg:pb-14"
+          class="pricing-card-annual relative rounded-[14px] bg-warm-100 p-5 ring-1 ring-black/[0.04] max-lg:ring-white/20"
         >
-          <div
-            class="flex flex-col gap-8 text-center lg:grid lg:grid-cols-2 lg:items-start lg:gap-12 lg:text-left"
-          >
-            <span
-              class="inline-flex items-center justify-center self-center rounded-full bg-yellow px-3 py-1 font-sans text-sm font-bold text-text-primary motion-safe:transition-transform motion-safe:duration-300 motion-safe:hover:scale-105 lg:hidden"
-            >
-              Save 10%
-            </span>
+          <div class="grid grid-cols-2 items-start gap-4 text-left lg:gap-12">
 
-            <div class="text-center lg:text-left">
+            <div>
               <p
-                class="font-sans text-xs font-bold uppercase tracking-[0.12em] text-primary lg:text-sm"
+                class="font-sans text-xs font-bold uppercase tracking-[0.12em] text-primary max-lg:text-yellow lg:text-sm"
               >
-                Annual – Best Value
+                Annual – Most Popular
               </p>
-              <p class="mt-3 font-sans text-5xl font-bold leading-none text-text-primary lg:text-6xl">
-                $55
+              <p class="mt-3 font-sans text-5xl font-bold leading-none text-text-primary max-lg:text-white lg:text-6xl">
+                $99
               </p>
-              <p class="mt-3 font-sans text-base text-text-secondary">
-                Per year · $4.58 a month
+              <p class="mt-3 font-sans text-base text-text-secondary max-lg:text-white/70">
+                Per year
               </p>
             </div>
 
-            <div
-              class="flex flex-col items-center justify-center gap-1.5 text-center lg:items-end lg:justify-start lg:gap-2 lg:self-start lg:text-right"
-            >
+            <div class="flex flex-col items-end gap-2 text-right">
               <span
-                class="hidden rounded-full bg-yellow px-3 py-1 font-sans text-sm font-bold text-text-primary motion-safe:transition-transform motion-safe:duration-300 motion-safe:hover:scale-105 lg:inline-flex"
+                class="inline-flex rounded-full bg-yellow px-3 py-1 font-sans text-sm font-bold text-text-primary motion-safe:transition-transform motion-safe:duration-300 motion-safe:hover:scale-105"
               >
-                Save 10%
+                Save 45%
               </span>
-              <p
-                class="font-sans text-base font-medium leading-snug text-text-primary"
-              >
+              <p class="font-sans text-base font-medium leading-snug text-text-primary max-lg:text-white">
                 Full access<br />to everything
               </p>
             </div>
+
           </div>
 
           <span
-            class="pointer-events-none absolute bottom-4 right-4 z-10 inline-flex items-center gap-0.5 rounded-full bg-primary/10 px-2.5 py-1 font-sans text-[11px] font-bold uppercase tracking-[0.14em] text-primary opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100 motion-safe:translate-y-1.5 motion-safe:transition-[opacity,transform] motion-safe:duration-300 motion-safe:ease-[cubic-bezier(0.22,1,0.36,1)] motion-safe:group-hover:translate-y-0 motion-reduce:translate-y-0"
+            class="pointer-events-none absolute bottom-4 right-4 z-10 hidden items-center gap-0.5 rounded-full bg-primary/10 px-2.5 py-1 font-sans text-[11px] font-bold uppercase tracking-[0.14em] text-primary opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100 motion-safe:translate-y-1.5 motion-safe:transition-[opacity,transform] motion-safe:duration-300 motion-safe:ease-[cubic-bezier(0.22,1,0.36,1)] motion-safe:group-hover:translate-y-0 motion-reduce:translate-y-0 lg:inline-flex"
             aria-hidden="true"
           >
             GO
-            <svg
-              class="h-3.5 w-3.5 shrink-0"
-              viewBox="0 0 256 256"
-              fill="currentColor"
-              aria-hidden="true"
-            >
-              <path
-                d="M224.49 136.49l-72 72a12 12 0 01-17-17L187 140H40a12 12 0 010-24h147l-51.49-51.52a12 12 0 0117-17l72 72a12 12 0 010 17z"
-              />
+            <svg class="h-3.5 w-3.5 shrink-0" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
+              <path d="M224.49 136.49l-72 72a12 12 0 01-17-17L187 140H40a12 12 0 010-24h147l-51.49-51.52a12 12 0 0117-17l72 72a12 12 0 010 17z"/>
             </svg>
           </span>
         </div>
       </a>
 
+      <!-- Monthly card -->
       <a
         href={SIGNUP_URL}
-        aria-label="Sign up for the monthly plan, 5 dollars per month"
-        class="group relative flex flex-col items-center gap-4 rounded-2xl bg-dark-navy p-5 text-center shadow-lg ring-1 ring-white/[0.08] outline outline-2 outline-offset-2 outline-transparent transition-[outline-color] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:outline-white/35 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-yellow active:scale-[0.98] max-lg:pb-14 lg:flex-row lg:items-start lg:justify-between lg:text-left"
+        aria-label="Sign up for the monthly plan, 15 dollars per month"
+        class="pricing-card-monthly group relative flex items-start justify-between gap-4 rounded-2xl bg-dark-navy p-5 text-left shadow-lg ring-1 ring-white/[0.08] outline outline-2 outline-offset-2 outline-transparent transition-[outline-color] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:outline-white/35 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-yellow active:scale-[0.98]"
       >
-        <div class="order-1 text-center lg:text-left">
-          <p
-            class="font-sans text-xs font-bold uppercase tracking-[0.12em] text-white/80 lg:text-sm"
-          >
+        <div>
+          <p class="font-sans text-xs font-bold uppercase tracking-[0.12em] text-white/80 lg:text-sm">
             Monthly
           </p>
           <p class="mt-3 font-sans text-5xl font-bold leading-none text-white lg:text-6xl">
-            $5
+            $15
           </p>
           <p class="mt-3 font-sans text-base text-white/85">
-            Per month · Cancel anytime
+            Per month
           </p>
         </div>
-        <div class="order-2 text-center lg:self-start lg:text-right">
+        <div class="text-right lg:self-start">
           <p class="font-sans text-base font-medium leading-snug text-white/95">
-            Full access<br />to everything
+            Full access<br />Cancel anytime
           </p>
         </div>
 
         <span
-          class="pointer-events-none absolute bottom-4 right-4 z-10 inline-flex items-center gap-0.5 rounded-full bg-white/10 px-2.5 py-1 font-sans text-[11px] font-bold uppercase tracking-[0.14em] text-yellow opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100 motion-safe:translate-y-1.5 motion-safe:transition-[opacity,transform] motion-safe:duration-300 motion-safe:ease-[cubic-bezier(0.22,1,0.36,1)] motion-safe:group-hover:translate-y-0 motion-reduce:translate-y-0"
+          class="pointer-events-none absolute bottom-4 right-4 z-10 hidden items-center gap-0.5 rounded-full bg-white/10 px-2.5 py-1 font-sans text-[11px] font-bold uppercase tracking-[0.14em] text-yellow opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100 motion-safe:translate-y-1.5 motion-safe:transition-[opacity,transform] motion-safe:duration-300 motion-safe:ease-[cubic-bezier(0.22,1,0.36,1)] motion-safe:group-hover:translate-y-0 motion-reduce:translate-y-0 lg:inline-flex"
           aria-hidden="true"
         >
           GO
-          <svg
-            class="h-3.5 w-3.5 shrink-0"
-            viewBox="0 0 256 256"
-            fill="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              d="M224.49 136.49l-72 72a12 12 0 01-17-17L187 140H40a12 12 0 010-24h147l-51.49-51.52a12 12 0 0117-17l72 72a12 12 0 010 17z"
-            />
+          <svg class="h-3.5 w-3.5 shrink-0" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
+            <path d="M224.49 136.49l-72 72a12 12 0 01-17-17L187 140H40a12 12 0 010-24h147l-51.49-51.52a12 12 0 0117-17l72 72a12 12 0 010 17z"/>
           </svg>
         </span>
       </a>
 
+      <!-- Mobile CTA -->
       <div class="flex justify-center pt-1 lg:hidden">
         <a
           href={SIGNUP_URL}
-          class="inline-flex items-center justify-center rounded-full border-2 border-yellow bg-yellow px-8 py-2 font-sans text-base font-bold text-dark transition-all duration-[250ms] [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-px hover:bg-yellow-warm hover:border-yellow-warm active:translate-y-0"
+          class="inline-flex w-full items-center justify-center rounded-full border-2 border-yellow bg-yellow px-8 py-3 font-sans text-base font-bold text-dark transition-all duration-[250ms] [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-px hover:bg-yellow-warm hover:border-yellow-warm active:translate-y-0"
         >
-          Get Inside an Italian Kitchen
+          Start cooking $99 year
         </a>
       </div>
+
     </div>
   </div>
 </section>
+
+<style>
+  @media (max-width: 1023px) {
+    .pricing-card-annual {
+      background-color: color-mix(in srgb, white 28%, var(--color-primary));
+    }
+    .pricing-card-monthly {
+      background-color: color-mix(in srgb, white 22%, var(--color-primary));
+    }
+  }
+</style>
