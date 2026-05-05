@@ -65,6 +65,7 @@
             class="min-h-[48px] w-full flex-1 rounded-full border border-white/70 bg-primary-hover/80 px-5 py-3 font-sans text-base text-white placeholder:text-white/45 outline-none transition-[box-shadow] focus:border-white focus:ring-2 focus:ring-white/35"
           />
           <button
+            id="newsletter-submit"
             type="submit"
             class="min-h-[48px] shrink-0 rounded-full bg-yellow px-6 py-3 font-sans text-base font-bold text-dark-navy transition-all hover:bg-yellow-warm active:scale-[0.98] sm:px-8"
           >
@@ -76,14 +77,23 @@
           const APPS_SCRIPT_URL =
             'https://script.google.com/macros/s/AKfycbzfLxSA4utKkaNH4VhhuvAGJB4UBVHMzdDbZD_byVUCz9p5cNeF7qFJMI0lVFQ321E-/exec';
 
+          const SPINNER = `<svg class="inline-block animate-spin mr-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"/></svg>Sending…`;
+
           document.getElementById('newsletter-form')?.addEventListener('submit', async function (e) {
             e.preventDefault();
             const form = document.getElementById('newsletter-form');
             const input = document.getElementById('newsletter-email');
-            if (!form || !(input instanceof HTMLInputElement)) return;
+            const button = document.getElementById('newsletter-submit');
+            if (!form || !(input instanceof HTMLInputElement) || !(button instanceof HTMLButtonElement)) return;
 
             const email = input.value.trim();
             if (!email) return;
+
+            // Loading state
+            button.disabled = true;
+            input.disabled = true;
+            button.innerHTML = SPINNER;
+            button.classList.add('opacity-70', 'cursor-not-allowed');
 
             try {
               await fetch(APPS_SCRIPT_URL, {
@@ -95,6 +105,11 @@
               form.outerHTML =
                 '<p class="font-sans text-base font-medium text-white">You\'re on the list! We\'ll be in touch.</p>';
             } catch {
+              // Restore on error
+              button.disabled = false;
+              input.disabled = false;
+              button.innerHTML = 'Send me the recipe';
+              button.classList.remove('opacity-70', 'cursor-not-allowed');
               alert('Something went wrong. Try again.');
             }
           });
